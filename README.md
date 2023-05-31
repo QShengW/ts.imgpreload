@@ -77,7 +77,7 @@ npm i ts.imgpreload
 }
 ```
 
-```react
+```tsx
 import React, { useEffect, useState } from 'react';
 import imgPreload from 'ts.imgpreload';
 
