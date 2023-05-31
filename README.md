@@ -21,8 +21,8 @@ npm i ts.imgpreload
 ```
 
 ## Usage
-
-```app.css
+### app.css
+```css
 .progress {
   padding: 4px;
   background: rgba(0, 0, 0, 0.25);
@@ -76,7 +76,7 @@ npm i ts.imgpreload
   background-color: #f27011;
 }
 ```
-
+### React
 ```tsx
 import React, { useEffect, useState } from 'react';
 import imgPreload from 'ts.imgpreload';
@@ -127,7 +127,7 @@ function ReactApp() {
 
 export default ReactApp;
 ```
-
+### Vue
 ```vue
 
 ```
