@@ -118,7 +118,7 @@ function ReactApp() {
     <>
       <div className="progress">
         <div className="progress-bar" style={{
-          width: `${parseInt(progress)}%`
+          width: `${progress}%`
         }}></div>
       </div>
       <div style={{ textAlign:'center' }}>{progress}%</div>
