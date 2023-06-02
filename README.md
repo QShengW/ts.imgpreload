@@ -22,6 +22,107 @@ npm i ts.imgpreload
 ```
 
 ## Usage
+### React
+```tsx
+import React, { useEffect, useState } from 'react';
+import imgPreload from 'ts.imgpreload';
+
+import './app.css'
+
+const images = [
+  'https://up.zhuoku.org/pic_source/bd/12/91/bd1291b72dde32d6ca8061bf85b66241.jpg',
+  'https://img1.baidu.com/it/u=3267072842,3910847117&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500',
+  'https://img2.baidu.com/it/u=852876481,1569343097&fm=253&fmt=auto&app=138&f=JPEG?w=1333&h=500',
+  'https://img0.baidu.com/it/u=1611687267,221767265&fm=253&fmt=auto&app=138&f=PNG?w=883&h=500'
+];
+
+function ReactApp() {
+
+  const [progress, setProgress] = useState('0');
+
+  useEffect(() => {
+
+    imgPreload({
+      imgs: images, 
+      settings: {
+        each: function (loaded, percentage) {
+          setTimeout(() => {
+            setProgress(percentage);
+          }, 1000);
+        },
+        all: function () {
+          console.log('All images loaded');
+          setProgress('100');
+        },
+      }
+    });
+
+  }, []);
+
+  return (
+    <>
+      <div className="progress">
+        <div className="progress-bar" style={{
+          width: `${progress}%`
+        }}></div>
+      </div>
+      <div style={{ textAlign:'center' }}>{progress}%</div>
+    </>
+  );
+}
+
+export default ReactApp;
+```
+### Vue
+```vue
+import { defineComponent, ref } from 'vue'
+import imgPreload from 'ts.imgpreload'
+
+const images = [
+  'https://up.zhuoku.org/pic_source/bd/12/91/bd1291b72dde32d6ca8061bf85b66241.jpg',
+  'https://img1.baidu.com/it/u=3267072842,3910847117&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500',
+  'https://img2.baidu.com/it/u=852876481,1569343097&fm=253&fmt=auto&app=138&f=JPEG?w=1333&h=500',
+  'https://img0.baidu.com/it/u=1611687267,221767265&fm=253&fmt=auto&app=138&f=PNG?w=883&h=500'
+]
+
+export default defineComponent({
+  setup() {
+    const progress = ref('0')
+
+    imgPreload({
+      imgs: images,
+      settings: {
+        each: function (loaded, percentage) {
+          setTimeout(() => {
+            progress.value = percentage
+          }, 1000)
+        },
+        all: function () {
+          console.log('All images loaded')
+          progress.value = '100'
+        }
+      }
+    })
+
+    return () => {
+      const progressV = progress.value
+      return (
+        <>
+          <div class="progress">
+            <div
+              class="progress-bar"
+              style={{
+                width: `${progressV}%`
+              }}
+            ></div>
+          </div>
+          <div style="textAlign:center">{progressV}%</div>
+        </>
+      )
+    }
+  }
+})
+```
 ### app.css
 ```css
 .progress {
@@ -76,61 +177,6 @@ npm i ts.imgpreload
 .progress>.progress-bar {
   background-color: #f27011;
 }
-```
-### React
-```tsx
-import React, { useEffect, useState } from 'react';
-import imgPreload from 'ts.imgpreload';
-
-import './app.css'
-
-const images = [
-  'https://up.zhuoku.org/pic_source/bd/12/91/bd1291b72dde32d6ca8061bf85b66241.jpg',
-  'https://img1.baidu.com/it/u=3267072842,3910847117&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500',
-  'https://img2.baidu.com/it/u=852876481,1569343097&fm=253&fmt=auto&app=138&f=JPEG?w=1333&h=500',
-  'https://img0.baidu.com/it/u=1611687267,221767265&fm=253&fmt=auto&app=138&f=PNG?w=883&h=500'
-];
-
-function ReactApp() {
-
-  const [progress, setProgress] = useState('0');
-
-  useEffect(() => {
-
-    imgPreload({
-      imgs: images, 
-      settings: {
-        each: function (loaded, percentage) {
-          setTimeout(() => {
-            setProgress(percentage);
-          }, 1000);
-        },
-        all: function () {
-          console.log('All images loaded');
-          setProgress('100');
-        },
-      }
-    });
-
-  }, []);
-
-  return (
-    <>
-      <div className="progress">
-        <div className="progress-bar" style={{
-          width: `${progress}%`
-        }}></div>
-      </div>
-      <div style={{ textAlign:'center' }}>{progress}%</div>
-    </>
-  );
-}
-
-export default ReactApp;
-```
-### Vue
-```vue
-
 ```
 <!-- # 🥥 [All Use Cases](https://github.com/QShengW/sw-ui/blob/master/src/App.tsx) -->
 
