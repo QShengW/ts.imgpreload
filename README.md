@@ -21,7 +21,7 @@ yarn add ts.imgpreload
 npm i ts.imgpreload
 ```
 ## Results Show
-![example](./example.MP4)
+[example](./example.MP4)
 
 ## Usage
 ### React
