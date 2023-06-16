@@ -22,6 +22,7 @@ npm i ts.imgpreload
 ```
 ## Results Show
 [example](https://ts-imgpreload-impvsn5bi-qshengw.vercel.app/example/index.html){:target="_blank"}
+[example](https://ts-imgpreload-impvsn5bi-qshengw.vercel.app/example/index.html){:target="_blank"}
 
 ## Usage
 ### React
