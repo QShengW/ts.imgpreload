@@ -21,7 +21,7 @@ yarn add ts.imgpreload
 npm i ts.imgpreload
 ```
 ## Results Show
-[example](https://ts-imgpreload-impvsn5bi-qshengw.vercel.app/example/index.html)
+[example](https://ts-imgpreload-impvsn5bi-qshengw.vercel.app/example/index.html){:target="_blank"}
 
 ## Usage
 ### React
