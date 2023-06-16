@@ -22,7 +22,6 @@ npm i ts.imgpreload
 ```
 ## Results Show
 [example](https://ts-imgpreload-impvsn5bi-qshengw.vercel.app/example/index.html)
-[example](javascript:void(0);" onclick="window.open('https://ts-imgpreload-impvsn5bi-qshengw.vercel.app/example/index.html');)
 
 ## Usage
 ### React
